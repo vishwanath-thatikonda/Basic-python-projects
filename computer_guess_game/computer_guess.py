@@ -8,6 +8,9 @@ def computer_guess_game(x):
         guess = random.randint(low,high)
         lst = ['l','h','c']
         feedback = input(f"If {guess} is low(L), High(H) or correct(C)?? ").lower()
+        if feedback.isdigit() or feedback not in lst:
+            print(f"Invalid input! please conform the number is low(L), High(H) or correct(C)?? ")
+            continue
         if feedback not in lst:
             if feedback.isdigit():
                 print(f"Invalid input! please conform the number{guess} is low(L), High(H) or correct(C)?? ")
